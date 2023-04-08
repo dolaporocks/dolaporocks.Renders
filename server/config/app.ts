@@ -20,7 +20,7 @@ import usersRouter from '../routes/users';
 import * as DBConfig from './db';
 
 const app = express();
-mongoose.connect(DBConfig.LocalURI);
+mongoose.connect(DBConfig.RemoteURI);
 //mongoose.connect(DBConfig.RemoteURI);
 
 const db = mongoose.connection;
