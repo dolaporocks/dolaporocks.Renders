@@ -42,7 +42,7 @@ const routes_1 = __importDefault(require("../routes"));
 const users_1 = __importDefault(require("../routes/users"));
 const DBConfig = __importStar(require("./db"));
 const app = (0, express_1.default)();
-mongoose_1.default.connect(DBConfig.LocalURI);
+mongoose_1.default.connect(DBConfig.RemoteURI);
 const db = mongoose_1.default.connection;
 db.on("error", function () {
     console.error("Connection Error!");

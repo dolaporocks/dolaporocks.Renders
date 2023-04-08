@@ -46,9 +46,8 @@ router.get('/delete/:id', function (req, res, next) {
 });
 router.get('/contact-list', function (req, res, next) {
     contact_1.default.find().then(function (contacts) {
-        console.log(contacts);
         res.render('index', { title: 'Contact List', page: "contact-list",
-            contacts: contacts, displayName: "" });
+            contacts: contacts, displayName: '' });
     }).catch(function (err) {
         console.error("Encountered an Error reading from the Database: " + err);
         res.end();
