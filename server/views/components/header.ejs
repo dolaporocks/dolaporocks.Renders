@@ -5,26 +5,40 @@
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <img src="/images/logo.jpeg" width="50" height="50" alt="Logo"/>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/home"><i class="fa-solid fa-house-user"></i> Home</a>
+          <a class="nav-link <%= (page === 'home') ? 'active' : '';%>" href="/home"><i class="fa-solid fa-house-user"></i> Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/products"><i class="fa-brands fa-product-hunt"></i> Products</a>
+          <a class="nav-link <%= (page === 'products') ? 'active' : '';%>" href="/products"><i class="fa-brands fa-product-hunt"></i> Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/service"><i class="fa-brands fa-servicestack"></i> Services</a>
+          <a class="nav-link <%= (page === 'service') ? 'active' : '';%>" href="/service"><i class="fa-brands fa-servicestack"></i> Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about"><i class="fa-solid fa-address-card"></i> About Us</a>
+          <a class="nav-link <%= (page === 'about') ? 'active' : '';%>" href="/about"><i class="fa-solid fa-address-card"></i> About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i> Contact</a>
+          <a class="nav-link <%= (page === 'contact') ? 'active' : '';%>" href="/contact"><i class="fa-solid fa-address-book"></i> Contact</a>
         </li>
-        <li id="login" class="nav-item">
-          <a class="nav-link" href="/login"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
-        </li>
+
+        <% if(displayName) { %>
+          <li id="contactListLink" class="nav-item">
+            <a class="nav-link <%= (page === 'contact-list') ? 'active' : '';%>" href="/contact-list">
+              <i class="fa-solid fa-contact-card"></i> Contact List</a>
+          </li>
+
+          <li id="logout" class="nav-item">
+            <a class="nav-link" href="/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+          </li>
+        <% } else { %>
+          <li id="login" class="nav-item">
+            <a class="nav-link <%= (page === 'login') ? 'active' : '';%>" href="/login"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+          </li>
+        <% }%>
       </ul>
     </div>
   </div>

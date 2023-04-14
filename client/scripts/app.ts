@@ -1,3 +1,10 @@
+/****************
+ *
+ * Name: Dolapo Adesina
+ * File : app.ts
+ * Date: 14th April, 2023
+ * Student ID: 100816149
+ */
 "use strict";
 //IIFE - Immediately Invoked Function Expression
 //AKA - Anonymous Self-Executing Function
@@ -147,45 +154,6 @@
     function DisplayLoginPage() : void{
         console.log("Display Register Page called");
 
-        let messageArea = $("#messageArea");
-        messageArea.hide();
-
-        $("#loginButton").on("click", function(){
-
-            let success = false;
-            let newUser = new core.User();
-
-            $.get("./data/user.json", function(data){
-
-                for(const u of data.users){
-                    let username = document.forms[0].username.value;
-                    let password = document.forms[0].password.value;
-                    if(username === u.Username && password === u.Password){
-                        success = true;
-                        newUser.fromJSON(u);
-                        break;
-                    }
-                }
-
-                if(success){
-                    sessionStorage.setItem("user", newUser.serialize() as string);
-                    messageArea.removeAttr("class").hide();
-                    location.href = "/contact-list";
-
-                }else{
-                    //fails validation
-                    $("#username").trigger("focus").trigger("select");
-                    messageArea.addClass("alert alert-danger").text("Error, failed to" +
-                        " authenticate, please check credentials. ");
-                }
-
-            });
-        });
-        $("#cancelButton").on("click", function(){
-            document.forms[0].reset();
-            location.href = "/home";
-
-        });
     }
 
     //checks if we are allowed to access or see the page we are in
@@ -232,7 +200,7 @@
 
         let page_id = $("body")[0].getAttribute("id");
 
-        CheckLogin();
+        //CheckLogin();
 
         switch(page_id){
 

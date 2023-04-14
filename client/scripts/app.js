@@ -87,37 +87,6 @@
     }
     function DisplayLoginPage() {
         console.log("Display Register Page called");
-        let messageArea = $("#messageArea");
-        messageArea.hide();
-        $("#loginButton").on("click", function () {
-            let success = false;
-            let newUser = new core.User();
-            $.get("./data/user.json", function (data) {
-                for (const u of data.users) {
-                    let username = document.forms[0].username.value;
-                    let password = document.forms[0].password.value;
-                    if (username === u.Username && password === u.Password) {
-                        success = true;
-                        newUser.fromJSON(u);
-                        break;
-                    }
-                }
-                if (success) {
-                    sessionStorage.setItem("user", newUser.serialize());
-                    messageArea.removeAttr("class").hide();
-                    location.href = "/contact-list";
-                }
-                else {
-                    $("#username").trigger("focus").trigger("select");
-                    messageArea.addClass("alert alert-danger").text("Error, failed to" +
-                        " authenticate, please check credentials. ");
-                }
-            });
-        });
-        $("#cancelButton").on("click", function () {
-            document.forms[0].reset();
-            location.href = "/home";
-        });
     }
     function AuthGuard() {
         let protected_routes = ["contact-list", "edit"];
@@ -149,7 +118,6 @@
     function Start() {
         console.log("Application Started");
         let page_id = $("body")[0].getAttribute("id");
-        CheckLogin();
         switch (page_id) {
             case "home":
                 DisplayHomePage();

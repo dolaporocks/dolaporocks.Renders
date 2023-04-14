@@ -1,11 +1,11 @@
-    <h1>Contact Us</h1>
+<h1>Contact Us</h1>
 
 <div id="messageArea" class="alert alert-danger">
-Error Message
+    Error Message
 </div>
 
 <div class="row justify-content-lg-center g-3">
-    <form class="col-lg-6 col-md-6 col-sm-6">
+    <form method = "post" class="col-lg-6 col-md-6 col-sm-6">
         <div class="input-group mb-3">
             <span class="input-group-text">Full Name</span>
             <input id="fullName" name="fullName" type="text" class="form-control"
@@ -19,7 +19,12 @@ Error Message
         <div class="input-group mb-3">
             <span class="input-group-text">Email address</span>
             <input id="emailAddress" name="emailAddress" type="email" class="form-control"
-                 aria-describedby="Email Address input" aria-label="Email Address input" required>
+                   aria-describedby="Email Address input" aria-label="Email Address input" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Short Message</span>
+            <input id="message" name="message" type="text" class="form-control"
+                   aria-describedby="Message input" aria-label="Message input">
         </div>
         <div class="mb-3 form-check">
             <input id="subscribeCheckbox" type="checkbox" class="form-check-input">

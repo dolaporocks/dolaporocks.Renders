@@ -1,7 +1,13 @@
 /**
  * Module dependencies.
  */
-
+/****************
+ *
+ * Name: Dolapo Adesina
+ * File : server.ts
+ * Date: 14th April, 2023
+ * Student ID: 100816149
+ */
 import app from './server/config/app';
 import debug from 'debug'
 debug('temp:server');
