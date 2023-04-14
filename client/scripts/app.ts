@@ -147,6 +147,8 @@
 
     function DisplayEditPage() : void{
         console.log("Display Edit Page called");
+        let messageArea = $("#messageArea");
+        messageArea.hide();
 
         ContactFormValidation();
     }

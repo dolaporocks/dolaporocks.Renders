@@ -83,6 +83,8 @@
     }
     function DisplayEditPage() {
         console.log("Display Edit Page called");
+        let messageArea = $("#messageArea");
+        messageArea.hide();
         ContactFormValidation();
     }
     function DisplayLoginPage() {
