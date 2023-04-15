@@ -50,10 +50,11 @@
             location.href = "/service";
         });
 
-        $("main").append(`<p id="MainParagraph" class="mt-3">This is my main Paragraph</p>`);
+        $("main").append(`<h4 id="MainParagraph" class="mt-3">I am Dolapo Adesina and I create programs and
+        websites that people can use for their businesses and personal use. </h4>`);
 
         $("main").append(`<article>
-            <p id="ArticleParagraph" class="mt-3">This is my article paragraph</p></article>`)
+            <h4 id="ArticleParagraph" class="mt-3">I love to CODEEEE!!!!!</h4></article>`)
 
     }
 
